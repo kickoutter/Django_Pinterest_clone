@@ -5,6 +5,13 @@
     <div style="margin: 2rem; text-align: center">
         <h1>METHOD</h1>
 
+        <form action="/account/hello_world/" method="post">
+            {# 장고에서 정상적으로 post 사용하려면 #}
+            {% csrf_token %}
+            <input type="submit" class="btn btn-dark rounded-pill px-5">
+        </form>
+
+
         {# 단순 변수 출력 : {{  }} #}
         <h3>{{ text }}</h3>
 
