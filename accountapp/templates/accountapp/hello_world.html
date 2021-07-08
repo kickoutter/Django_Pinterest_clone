@@ -2,33 +2,11 @@
 
 {% block content %}
 
-    <style>
+    <div style="margin: 2rem; text-align: center">
+        <h1>METHOD</h1>
 
-        .testing {
-            background-color: yellow;
-            height: 48px;
-            width: 48px;
-            margin: 1rem;
-            border-radius: .5rem;
-            display: inline-block;
-        }
-
-    </style>
-
-    <div style="height: 20rem; background-color: aqua;
-    margin: 2rem; border-radius: 1rem; font-size: 2rem">
-        <h1>TEST</h1>
-
-{#    <div class="testing" style="display: block">block</div>#}
-{#    <div class="testing" style="display: inline">inline</div>#}
-{#    <div class="testing" style="display: inline-block">inline-block</div>#}
-{#    <div class="testing" style="display: none">none</div>#}
-{#    <div class="testing"></div>#}
-
-    <div class="testing" style="height: 48px; width: 48px;">48px</div>
-    <div class="testing" style="height: 3rem; width: 3rem;">3rem</div>
-    <div class="testing" style="height: 3em; width: 3em;">3em</div>
-    <div class="testing" style="height: 30%; width: 30%;">30%</div>
+        {# 단순 변수 출력 : {{  }} #}
+        <h3>{{ text }}</h3>
 
     </div>
 
