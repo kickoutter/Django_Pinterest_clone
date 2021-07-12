@@ -51,7 +51,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'accountapp',    # accountapp을 추가
-    'accountapp2'    # accountapp2을 추가
+    # 'accountapp2'    # accountapp2을 추가
 ]
 
 MIDDLEWARE = [
