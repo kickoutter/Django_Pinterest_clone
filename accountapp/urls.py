@@ -9,6 +9,7 @@ app_name = 'accountapp'
 urlpatterns = [
     path('hello_world/', hello_world, name='hello_world'),
 
+
     # 가운데가 함수 들어와야할 자린데 class가 들어가서 class의 함수를 뱉어주는 .as_view() 사용
     path('create/', AccountCreateView.as_view(), name='create'),
 ]
