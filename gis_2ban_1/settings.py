@@ -54,6 +54,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'accountapp',    # accountapp을 추가
     # 'accountapp2'    # accountapp2을 추가
+
+    # 3rd party app
+    'bootstrap4',
 ]
 
 MIDDLEWARE = [
