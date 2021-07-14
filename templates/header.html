@@ -6,8 +6,26 @@
     <div class="pragmatic_header_button">
         <span>nav1</span>
         <span>nav1</span>
-        <span>nav1</span>
-        <span>nav1</span>
+
+{#        유저가 로그인 해있는지 안해있는지 판별하는 분기분#}
+        {% if not user.is_authenticated %}
+        <span>
+            <a href="{% url 'accountapp:login' %}">
+                Login
+            </a>
+        </span>
+        <span>
+            <a href="{% url 'accountapp:create' %}">
+                Sign Up
+            </a>
+        </span>
+        {% else %}
+        <span>
+            <a href="{% url 'accountapp:logout' %}">
+                Logout
+            </a>
+        </span>
+        {% endif %}
     </div>
 
 </div>
