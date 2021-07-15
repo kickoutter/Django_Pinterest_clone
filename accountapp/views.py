@@ -32,3 +32,4 @@ class AccountCreateView(CreateView):
     success_url = reverse_lazy('accountapp:hello_world') # 성공하면 hello_world로 가라!
     template_name = 'accountapp/create.html'
 
+# DetailView
