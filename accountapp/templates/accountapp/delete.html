@@ -1,17 +1,15 @@
 {% extends 'base.html' %}
-{% load bootstrap4 %}
 
 {% block content %}
 
     <div class="text-center mw-500 m-auto">
         <div class="m-5">
-            <h4>Update Info</h4>
+            <h4>Quit</h4>
         </div>
         <div>
             <!-- form태그의 action 속성의 값에 pk=user.pk를 적어야, 이전 url에서 받아온 <int:pk>가 방금 적은 값으로 할당 -->
-            <form action="{% url 'accountapp:update' pk=target_user.pk %}" method="post">
+            <form action="{% url 'accountapp:delete' pk=target_user.pk %}" method="post">
                 {% csrf_token %}
-                {% bootstrap_form form %}
                 <div class="m-5">
                     <input type="submit", class="btn-dark rounded-pill px-5">
                 </div>
