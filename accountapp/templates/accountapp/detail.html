@@ -11,7 +11,9 @@
         <div>
             {{ target_user.date_joined }}
         </div>
-         {% if target_user == user %}
+
+        <!-- 현재 target_user와 DB에 있는 user가 동일한지! 확인 -->
+        {% if target_user == user %}
         <div>
             <a href="{% url 'accountapp:update' pk=target_user.pk %}">
                 Update Info
