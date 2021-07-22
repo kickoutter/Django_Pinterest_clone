@@ -53,7 +53,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'accountapp',    # accountapp을 추가
-    # 'accountapp2'    # accountapp2을 추가
+    'profileapp',    # profileapp 추가
 
     # 3rd party app
     'bootstrap4',
@@ -147,7 +147,7 @@ STATICFILES_DIRS = [
 
 # 사진을 다루기 위한 설정 해주기
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media') # os.path ~ 해준 이유 : 다른 os랑도 호완성을 위해
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field

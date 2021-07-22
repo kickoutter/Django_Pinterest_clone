@@ -19,6 +19,7 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     # accountapp 으로 가는 추가적인 분기문 작성
-    path('account/', include('accountapp.urls'))
+    path('accounts/', include('accountapp.urls')),
+    path('profiles/', include('profileapp.urls')),
 ]
 
