@@ -8,6 +8,7 @@
             <h4>Profile Create</h4>
         </div>
         <div>
+            <!-- enctype : 인코딩타입 저거 써야지 이미지가 올라감, 안쓰면 경로만 올라감 -->
             <form action="{% url 'profileapp:create' %}" method="post" enctype="multipart/form-data">
                 {% csrf_token %}
                 {% bootstrap_form form %}
