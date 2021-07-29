@@ -40,14 +40,20 @@ def hello_world(request):
 class AccountCreateView(CreateView):
     model = User
     form_class = UserCreationForm
-    success_url = reverse_lazy('accountapp:hello_world') # 성공하면 hello_world로 가라!, # 만들고 추가하는거라 success~ 해줬음
+    # success_url = reverse_lazy('accountapp:hello_world') # 성공하면 hello_world로 가라!, # 만들고 추가하는거라 success~ 해줬음
     template_name = 'accountapp/create.html'
+
+    def get_success_url(self):
+        return reverse('accountapp:detail', kwargs={'pk': self.object.pk})
 
 # DetailView
 class AccountDetailView(DetailView):
     model = User
     context_object_name = 'target_user' # 컨텍스트에서 볼 객체의 이름 설정?
     template_name = 'accountapp/detail.html'
+
+    def get_success_url(self):
+        return reverse('accountapp:detail', kwargs={'pk': self.object.pk})
 
 # 데코레이터 요소 리스트 (그냥 중복 줄이려고)
 has_ownership = [account_ownership_required, login_required]

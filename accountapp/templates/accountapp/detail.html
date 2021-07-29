@@ -18,7 +18,15 @@
         <div>
             <img src="{{ target_user.profile.image.url }}" alt="profile image"
                  class="profile_image m-4">
-            <h2 class="NNS_B">{{ target_user.profile.nickname }}</h2>
+            <h2 class="NNS_B">
+                {{ target_user.profile.nickname }}
+                    {% if target_user == user %}
+                    <a href="{% url 'profileapp:update' pk=target_user.profile.pk %}"
+                       class="material-icons round_button">
+                        edit
+                    </a>
+                    {% endif %}
+            </h2>
             <h5>{{ target_user.profile.message }}</h5>
         {% else %}
             <a href="{% url 'profileapp:create' %}"><h5>Create Profile</h5></a>
@@ -28,13 +36,15 @@
         <!-- 현재 target_user와 DB에 있는 user가 동일한지! 확인 -->
         {% if target_user == user %}
         <div class="text-center">
-            <a href="{% url 'accountapp:update' pk=target_user.pk %}">
-                Update Info
+            <a href="{% url 'accountapp:update' pk=target_user.pk %}"
+               class="material-icons round_button mx-1">
+                settings
             </a>
         </div>
         <div class="text-center">
-            <a href="{% url 'accountapp:delete' pk=target_user.pk %}">
-                Quit
+            <a href="{% url 'accountapp:delete' pk=target_user.pk %}"
+               class="material-icons round_button mx-1">
+                close
             </a>
         </div>
         {% endif %}
