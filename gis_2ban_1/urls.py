@@ -24,6 +24,7 @@ urlpatterns = [
     # accountapp 으로 가는 추가적인 분기문 작성
     path('accounts/', include('accountapp.urls')),
     path('profiles/', include('profileapp.urls')),
+    path('articles/', include('articleapp.urls')),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

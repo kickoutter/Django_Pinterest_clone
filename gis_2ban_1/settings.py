@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'accountapp',    # accountapp을 추가
     'profileapp',    # profileapp 추가
+    'articleapp',
 
     # 3rd party app
     'bootstrap4',
