@@ -286,6 +286,7 @@ let magicGrid = new MagicGrid({
 
 // magicGrid.listen();
 
+// magicgrid가 정렬되게 해주는 JS부분
 var masonrys = document.getElementsByTagName("img");
 
 for (let i = 0; i < masonrys.length; i++){
