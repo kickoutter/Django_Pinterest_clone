@@ -55,6 +55,7 @@ INSTALLED_APPS = [
     'accountapp',    # accountapp을 추가
     'profileapp',    # profileapp 추가
     'articleapp',
+    'commentapp',
 
     # 3rd party app
     'bootstrap4',
