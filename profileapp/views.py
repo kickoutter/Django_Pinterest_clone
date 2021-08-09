@@ -14,6 +14,7 @@ from profileapp.models import Profile
 class ProfileCreateView(CreateView):
     model = Profile
     form_class = ProfileCreationForm
+    context_object_name = 'target_profile'
     # success_url = reverse_lazy('accountapp:hello_world') # 완료되면 오는 url
     template_name = 'profileapp/create.html'
 
@@ -24,7 +25,7 @@ class ProfileCreateView(CreateView):
     # accountapp의 url페이지를 보면 url패턴에 pk가 있습니다. 이는 즉, 정적으로 넘어가게 되면 해당 페이지의 pk없이 가는 것이므로 문제가 되겠조?!
     # 동적으로 페이지를 넘기는 것이 바로 get_success_url 메소드
     def get_success_url(self):
-        return reverse('accountapp:detail', kwargs={'pk': self.object.pk})
+        return reverse('accountapp:detail', kwargs={'pk': self.object.user.pk})
 
 @method_decorator(login_required, 'get')
 @method_decorator(login_required, 'post')
@@ -36,4 +37,4 @@ class ProfileUpdateView(UpdateView):
     template_name = 'profileapp/update.html'
 
     def get_success_url(self):
-        return reverse('accountapp:detail', kwargs={'pk': self.object.pk})
+        return reverse('accountapp:detail', kwargs={'pk': self.object.user.pk})

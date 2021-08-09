@@ -3,3 +3,8 @@ CreateView나 UpdateView, DeleteView를 사용하면 특정 기능을 한 뒤 �
 이때 url parameter를 사용한 특정 페이지로 이동할때는 get_success_url 메소드를 사용
 출처: https://jamanbbo.tistory.com/20 [자기계발하는 쏭이]
 
+ㅁ Form이란
+- 입력에 대한 처리를 할 수 있도록 Form기능을 제공해 주는 것!
+- 기존에 장고에 있는 Form은 형식에 맞춰 가져다 쓰면 된다. (login막 이런거처럼 id, pw넣는 form이 이미 정해져있어서 장고에서 불러와 그냥 쓰면 됨.)
+- 새로운 Form을 만들어 쓰고 싶으면, Forms.py에 새로 클래스를 만들어 주면된다.
+- 참고 : https://junlab.tistory.com/193
