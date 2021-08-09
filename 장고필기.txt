@@ -1,0 +1,5 @@
+ㅁ success_url vs. get_success_url
+CreateView나 UpdateView, DeleteView를 사용하면 특정 기능을 한 뒤 어떤 페이지로 이동할 것인지 정해주는 success_url 속성이 있다.
+이때 url parameter를 사용한 특정 페이지로 이동할때는 get_success_url 메소드를 사용
+출처: https://jamanbbo.tistory.com/20 [자기계발하는 쏭이]
+
