@@ -34,6 +34,28 @@
 
             <div class="text-center my-4">
                 {# 댓글 작성 폼 및 댓글 #}
+
+                {% for comment in target_article.comment.all %}
+                    <div class="comment_box">
+                        <div>
+                            <span>
+                                <img src="{{ comment.writer.profile.image.url }}" alt="profile image"
+                                     class="comment_image m-2">
+                            </span>
+                            <span class="NNS_B" style="font-size: 1.4rem">{{ comment.writer.profile.nickname }}</span>
+                            <span>{{ comment.created_at }}</span>
+                        </div>
+                        <br>
+                        <div>
+                            <p>{{ comment.content }}</p>
+                        </div>
+                    </div>
+                {% endfor %}
+
+{#                {% for comment in target_article.comment.all %}#}
+{#                    {% include 'commentapp/detail.html' with comment=comment %}#}
+{#                {% endfor %}#}
+
 {#                {% include 'commnetapp/create.html' with article=target_article %}#}
                 {% include 'commentapp/create.html' %}
             </div>
