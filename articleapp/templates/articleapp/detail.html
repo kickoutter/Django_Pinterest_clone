@@ -49,14 +49,20 @@
                         <div>
                             <p>{{ comment.content }}</p>
                         </div>
+                        {% if comment.writer == user %}
+                        <div style="text-align: right">
+                            <a href="{% url 'commentapp:delete' pk=comment.pk %}"
+                               class="btn btn-danger rounded-pill px-5">
+                                Delete
+                            </a>
+                        </div>
+                        {% endif %}
                     </div>
                 {% endfor %}
 
-{#                {% for comment in target_article.comment.all %}#}
-{#                    {% include 'commentapp/detail.html' with comment=comment %}#}
-{#                {% endfor %}#}
 
-{#                {% include 'commnetapp/create.html' with article=target_article %}#}
+
+{#                {% include 'commnetapp/create.html' with article=target_article %} 블로그에는 이렇게 나와있음 뭔차이일까? #}
                 {% include 'commentapp/create.html' %}
             </div>
 
