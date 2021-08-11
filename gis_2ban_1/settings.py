@@ -40,7 +40,8 @@ SECRET_KEY = env_list['SECRET_KEY']
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+# * : 모든 외부 호스트를 다 허용해줌
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
