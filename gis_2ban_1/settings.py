@@ -57,6 +57,7 @@ INSTALLED_APPS = [
     'profileapp',    # profileapp 추가
     'articleapp',
     'commentapp',
+    'projectapp',
 
     # 3rd party app
     'bootstrap4',
