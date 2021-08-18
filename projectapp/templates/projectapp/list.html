@@ -23,8 +23,8 @@
         }
 
         .container img {
-            width: 100%;
-            border-radius: 1rem;
+            width: 7rem;
+            height: 7rem;
             object-fit: cover;
             border-radius: 1rem;
         }
@@ -37,7 +37,7 @@
                 <a href="{% url 'projectapp:detail' pk=project.pk %}">
                     <img src="{{ project.image.url }}" alt="">
                 </a>
-                <span class="my-2 NNS_B">{{ project.title }}</span>
+                <span class="my-2 NNS_B">{{ project.name | truncatechars:10 }}</span>
             </div>
         {% endfor %}
     </div>
@@ -53,7 +53,7 @@
         </a>
         <a href="{% url 'projectapp:create' %}"
            class="btn btn-outline-dark rounded-pill px-5">
-            Create Article
+            Create Project
         </a>
     </div>
 
