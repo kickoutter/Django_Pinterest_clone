@@ -8,3 +8,6 @@ CreateView나 UpdateView, DeleteView를 사용하면 특정 기능을 한 뒤 �
 - 기존에 장고에 있는 Form은 형식에 맞춰 가져다 쓰면 된다. (login막 이런거처럼 id, pw넣는 form이 이미 정해져있어서 장고에서 불러와 그냥 쓰면 됨.)
 - 새로운 Form을 만들어 쓰고 싶으면, Forms.py에 새로 클래스를 만들어 주면된다.
 - 참고 : https://junlab.tistory.com/193
+
+ㅁ 로컬의외 다른기기에서 서버 접속하려면 ngrok.exe를 사용해야함.
+- 사용법 : ex) 터미널에서 ngrok http 8000
