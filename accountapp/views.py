@@ -8,10 +8,12 @@ from django.shortcuts import render
 from django.urls import reverse, reverse_lazy
 from django.utils.decorators import method_decorator
 from django.views.generic import CreateView, DetailView, UpdateView, DeleteView
+from django.views.generic.list import MultipleObjectMixin
 
 from accountapp.decorators import account_ownership_required
 from accountapp.forms import AccountCreationForm
 from accountapp.models import HelloWorld
+from articleapp.models import Article
 
 
 @login_required(login_url=reverse_lazy('accountapp:login')) # 장고에 이미 있는 데코레이터
@@ -47,13 +49,20 @@ class AccountCreateView(CreateView):
         return reverse('accountapp:detail', kwargs={'pk': self.object.pk})
 
 # DetailView
-class AccountDetailView(DetailView):
+class AccountDetailView(DetailView, MultipleObjectMixin):
     model = User
     context_object_name = 'target_user' # 컨텍스트에서 볼 객체의 이름 설정?
     template_name = 'accountapp/detail.html'
 
+    paginate_by = 20
+
     def get_success_url(self):
         return reverse('accountapp:detail', kwargs={'pk': self.object.pk})
+
+    def get_context_data(self, **kwargs):
+        article_list = Article.objects.filter(writer=self.object)
+        return super().get_context_data(object_list=article_list,
+                                        **kwargs)
 
 # 데코레이터 요소 리스트 (그냥 중복 줄이려고)
 has_ownership = [account_ownership_required, login_required]
