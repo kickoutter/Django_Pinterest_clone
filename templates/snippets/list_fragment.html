@@ -1,6 +1,5 @@
-{% extends 'base.html' %}
+
 {% load static %}
-{% block content %}
 
     <style>
         .container {
@@ -23,21 +22,19 @@
         }
 
         .container img {
-            width: 7rem;
-            height: 7rem;
-            object-fit: cover;
+            width: 100%;
             border-radius: 1rem;
         }
 
     </style>
 
     <div class="container my-4">
-        {% for project in project_list %}
+        {% for article in article_list %}
             <div>
-                <a href="{% url 'projectapp:detail' pk=project.pk %}">
-                    <img src="{{ project.image.url }}" alt="">
+                <a href="{% url 'articleapp:detail' pk=article.pk %}">
+                    <img src="{{ article.image.url }}" alt="">
                 </a>
-                <span class="my-2 NNS_B">{{ project.name | truncatechars:10 }}</span> {# 장고내부의 기능 이름길이제한 #}
+                <span class="my-2 NNS_B">{{ article.title }}</span>
             </div>
         {% endfor %}
     </div>
@@ -47,15 +44,13 @@
     {% include 'snippets/pagination.html' %}
 
     <div class="text-center my-5">
-        <a href="{% url 'projectapp:create' %}"
+        <a href="{% url 'articleapp:create' %}"
            class="btn btn-dark rounded-pill material-icons">
             brush
         </a>
-        <a href="{% url 'projectapp:create' %}"
+        <a href="{% url 'articleapp:create' %}"
            class="btn btn-outline-dark rounded-pill px-5">
-            Create Project
+            Create Article
         </a>
     </div>
 
-
-{% endblock %}

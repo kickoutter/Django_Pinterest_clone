@@ -7,3 +7,7 @@ class Project(models.Model):
     image = models.ImageField(upload_to='project/', null=False)
 
     created_at = models.DateTimeField(auto_now_add=True)
+
+    # 문자열을 되돌려줘야 할때 어떤 문자열을 되돌려주는지??
+    def __str__(self):
+        return self.name
