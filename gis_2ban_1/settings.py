@@ -59,6 +59,7 @@ INSTALLED_APPS = [
     'commentapp',
     'projectapp',
     'subscribeapp',
+    'likeapp',
 
     # 3rd party app
     'bootstrap4',
