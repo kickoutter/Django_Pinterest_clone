@@ -39,13 +39,12 @@ class LikeArticleView(RedirectView):
             db_transaction(user, article)
             # 좋아요 o 메세지 출력
             messages.add_message(request, messages.SUCCESS, '좋아요가 반영되었습니다.')
-        except:
+        except ValidationError:
             # 좋아요 x 메세지 출력
             messages.add_message(request, messages.ERROR, '좋아요는 한번만 가능합니다.')
             return HttpResponseRedirect(reverse('articleapp:detail', kwargs={'pk': kwargs['article_pk']}))
 
-
-        return  super().get(request, *args, **kwargs)
+        return super().get(request, *args, **kwargs)
 
     def get_redirect_url(self, *args, **kwargs):
         return reverse('articleapp:detail', kwargs={'pk': kwargs['article_pk']})
