@@ -21,4 +21,5 @@ class Article(models.Model):
     # 자동으로 날짜 입력되게, 날짜정보
     created_at = models.DateField(auto_now_add=True, null=True)
 
-    like = models.IntegerField(default=0)
+    like = models.IntegerField(default=0
+                               )
