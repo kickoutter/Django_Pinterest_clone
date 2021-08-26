@@ -30,7 +30,7 @@
             {# 게시글 내용, 게시글 대표 이미지 #}
             <img src="{{ target_article.image.url }}"
                  class="article_image" alt="">
-            <div class="article_content my-5">{{ target_article.contet }}</div>
+            <div class="article_content my-5">{{ target_article.contet | safe }}</div>
             {% if target_article.writer == user %}
             <div>
                 <a href="{% url 'articleapp:update' pk=target_article.pk %}"
