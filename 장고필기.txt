@@ -11,3 +11,5 @@ CreateView나 UpdateView, DeleteView를 사용하면 특정 기능을 한 뒤 �
 
 ㅁ 로컬의외 다른기기에서 서버 접속하려면 ngrok.exe를 사용해야함.
 - 사용법 : ex) 터미널에서 ngrok http 8000
+
+ㅁ WYSIWYG 기능
