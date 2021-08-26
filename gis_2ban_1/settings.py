@@ -167,5 +167,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 # 추가 해준 것 Redirect URL
-LOGIN_REDIRECT_URL = reverse_lazy('accountapp:hello_world')
+LOGIN_REDIRECT_URL = reverse_lazy('articleapp:list')
 LOGOUT_REDIRECT_URL = reverse_lazy('accountapp:login')

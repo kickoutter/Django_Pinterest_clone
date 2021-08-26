@@ -16,27 +16,27 @@ from accountapp.models import HelloWorld
 from articleapp.models import Article
 
 
-@login_required(login_url=reverse_lazy('accountapp:login')) # 장고에 이미 있는 데코레이터
-def hello_world(request):
-
-    if request.user.is_authenticated:
-
-        if request.method == "POST":
-
-            temp = request.POST.get('input')
-
-            new_data = HelloWorld()
-            new_data.text = temp
-            new_data.save()
-
-            return HttpResponseRedirect(reverse('accountapp:hello_world'))
-
-        else:
-            data_list = HelloWorld.objects.all()
-            return render(request, 'accountapp/hello_world.html', context={'data_list': data_list})
-
-    else:
-        return HttpResponseRedirect(reverse('accountapp:login'))
+# @login_required(login_url=reverse_lazy('accountapp:login')) # 장고에 이미 있는 데코레이터
+# def hello_world(request):
+#
+#     if request.user.is_authenticated:
+#
+#         if request.method == "POST":
+#
+#             temp = request.POST.get('input')
+#
+#             new_data = HelloWorld()
+#             new_data.text = temp
+#             new_data.save()
+#
+#             return HttpResponseRedirect(reverse('accountapp:hello_world'))
+#
+#         else:
+#             data_list = HelloWorld.objects.all()
+#             return render(request, 'accountapp/hello_world.html', context={'data_list': data_list})
+#
+#     else:
+#         return HttpResponseRedirect(reverse('accountapp:login'))
 
 
 class AccountCreateView(CreateView):
@@ -74,7 +74,7 @@ class AccountUpdateView(UpdateView):
     model = User # 기존 AccountCreateView와 동일한 모델 값을 사용해요.
     form_class = AccountCreationForm # form을 만들어 값을 전달하게 되요. (ID변경 막으려고, 커스터마이징한 Form을 새로 만들어 전달받아 사용.)
     context_object_name = 'target_user'
-    success_url = reverse_lazy('accountapp:hello_world') # 성공적으로 프로필이 완성되면 메인화면으로 넘겨줍니다.
+    success_url = reverse_lazy('articleapp:list') # 성공적으로 프로필이 완성되면 메인화면으로 넘겨줍니다.
     template_name = 'accountapp/update.html' # template경로 값을 지정해줘요.
 
 
@@ -83,5 +83,5 @@ class AccountUpdateView(UpdateView):
 class AccountDeleteView(DeleteView):
     model = User
     context_object_name = 'target_user'
-    success_url = reverse_lazy('accountapp:hello_world')
+    success_url = reverse_lazy('articleapp:list')
     template_name = 'accountapp/delete.html'
