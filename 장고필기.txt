@@ -9,7 +9,27 @@ CreateView나 UpdateView, DeleteView를 사용하면 특정 기능을 한 뒤 �
 - 새로운 Form을 만들어 쓰고 싶으면, Forms.py에 새로 클래스를 만들어 주면된다.
 - 참고 : https://junlab.tistory.com/193
 
+ㅁ AWS 사용법
+- AWS에서 인스턴스 만들고
+- 터미널에서 : ssh -i gis_2banRSA.pem ubuntu@54.86.30.123(퍼블릭키임)
+- AWS 가서 포트도 뚫어주고
+
 ㅁ 로컬의외 다른기기에서 서버 접속하려면 ngrok.exe를 사용해야함.
 - 사용법 : ex) 터미널에서 ngrok http 8000
 
 ㅁ WYSIWYG 기능
+
+<210830 - AWS, GCP(이건 카드때문에 안됨) >
+- aws 인스턴스 만들기
+
+< 210901 (수) - GCP, AWS, Docker깔기, Potainer 깔기 >
+ㅁ GCP ssh 만들기
+- 터미널에 치면 : ssh-keygen -t rsa -b 4096 -f gis_2ban_gcp -C "thwan97@likelion.org"
+- gis_2ban_gcp 파일들이 나옴, 이제 그중에 .pub파일에 있는거를 복사하고 -> GCP의 메타데이터 > SSH에 만들고 복붙함.
+
+ㅁ 그 뒤 GCP 접속하기
+- 터미널 : ssh -i gis_2ban_gcp thwan97@34.145.13.66
+
+< 210902 (목) >
+ㅁ 깔려있는 라이브러리
+- pip freeze > requirements.txt
