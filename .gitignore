@@ -89,3 +89,5 @@ gis_2banRSA.pem
 
 gis_2ban_gcp
 gis_2ban_gcp.pub
+
+Dockerfile
