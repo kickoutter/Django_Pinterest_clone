@@ -16,9 +16,10 @@ from .base import *
 
 
 def read_secret(secret_name):
-    with open('/run/secrets/' + secret_name) as f:
-        secret = f.read()
-        secret = secret.rstrip().lstrip()
+    f = open('/run/secrets/' + secret_name)
+    secret = f.read()
+    secret = secret.rstrip().lstrip()
+    f.close()
     return secret
 
 # Quick-start development settings - unsuitable for production
