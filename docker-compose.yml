@@ -4,32 +4,33 @@ services:
   nginx:
     image: nginx:1.19.5
     networks:
-      - gis_2ban_1_network
+      - gis_network
     volumes:
       - /home/django_course/nginx.conf:/etc/nginx/nginx.conf
-      - gis_2ban_1_static:/data/static
-      - gis_2ban_1_media:/data/media
+      - gis_static:/data/static
+      - gis_media:/data/media
+      - gis_log:/var/log/nginx/
     ports:
       - 80:80
 
   django:
     image: gis_2ban_1_image:v5
     networks:
-      - gis_2ban_1_network
+      - gis_network
     secrets:
       - MYSQL_PASSWORD
       - DJANGO_SECRET_KEY
       - MYSQL_USER
     volumes:
-      - gis_2ban_1_static:/home/gis_2ban_1/staticfiles
-      - gis_2ban_1_media:/home/gis_2ban_1/media
+      - gis_static:/home/gis_2ban_1/staticfiles
+      - gis_media:/home/gis_2ban_1/media
 
   mariadb:
     image: mariadb:10.5
     networks:
-      - gis_2ban_1_network
+      - gis_network
     volumes:
-      - database:/var/lib/mysql
+      - gis_mariadb:/var/lib/mysql
     secrets:
       - MYSQL_PASSWORD
       - MYSQL_ROOT_PASSWORD
@@ -41,12 +42,13 @@ services:
       MYSQL_ROOT_PASSWORD_FILE: /run/secrets/MYSQL_ROOT_PASSWORD
 
 networks:
-  gis_2ban_1_network:
+  gis_network:
 
 volumes:
-  gis_2ban_1_static:
-  gis_2ban_1_media:
-  database:
+  gis_static:
+  gis_media:
+  gis_mariadb:
+  gis_log:
 
 secrets:
   DJANGO_SECRET_KEY:

@@ -33,3 +33,6 @@ CreateView나 UpdateView, DeleteView를 사용하면 특정 기능을 한 뒤 �
 < 210902 (목) >
 ㅁ 깔려있는 라이브러리
 - pip freeze > requirements.txt
+
+< nginx.conf 올리기 >
+- django_course 폴더 만들고 chomod 777 django_course/ 해서 권한 주고 올리기

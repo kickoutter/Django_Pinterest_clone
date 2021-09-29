@@ -1,0 +1,11 @@
+10.0.0.2 - - [29/Sep/2021:01:52:08 +0000] "GET /static/base.css HTTP/1.1" 200 1313 "http://54.146.230.194/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36"
+
+10.0.0.2 - - [29/Sep/2021:01:52:08 +0000] "GET /static/js/magicgrid.js HTTP/1.1" 200 6414 "http://54.146.230.194/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36"
+
+10.0.0.2 - - [29/Sep/2021:01:52:10 +0000] "GET /static/fonts/NanumSquareR.otf HTTP/1.1" 200 492584 "http://54.146.230.194/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36"
+
+10.0.0.2 - - [29/Sep/2021:01:52:11 +0000] "GET /favicon.ico HTTP/1.1" 404 179 "http://54.146.230.194/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36"
+
+10.0.0.2 - - [29/Sep/2021:01:59:14 +0000] "GET /.env HTTP/1.1" 404 179 "-" "Mozilla/5.0 (Linux; U; Android 4.4.2; en-US; HM NOTE 1W Build/KOT49H) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 UCBrowser/11.0.5.850 U3/0.8.0 Mobile Safari/534.30"
+
+10.0.0.2 - - [29/Sep/2021:01:59:14 +0000] "POST / HTTP/1.1" 403 1529 "-" "Mozilla/5.0 (Linux; U; Android 4.4.2; en-US; HM NOTE 1W Build/KOT49H) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 UCBrowser/11.0.5.850 U3/0.8.0 Mobile Safari/534.30"
