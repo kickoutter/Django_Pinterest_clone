@@ -36,3 +36,11 @@ CreateView나 UpdateView, DeleteView를 사용하면 특정 기능을 한 뒤 �
 
 < nginx.conf 올리기 >
 - django_course 폴더 만들고 chomod 777 django_course/ 해서 권한 주고 올리기
+
+< 210929 (수) - log, goaccess >
+ㅁ goaccess
+- cat access.log | sudo docker run --rm -i -e LANG=$LANG allinurl/goaccess -a -o html --log-format COMBINED - > report.html
+
+ㅁ 도커에서 goaccess 컨테이너 만들기
+- Volumes : /var/log/nginx
+- Command : /var/log/nginx/gis_access.log -o /var/log/nginx/report.html --log-format=COMBINED --real-time-html
